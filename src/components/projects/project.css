@@ -1,0 +1,104 @@
+.projectCards {
+  padding-top: 16vh;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat Alternates", sans-serif;
+  padding-bottom: 50px;
+}
+.projectCards h2 {
+  color: #fff;
+  font-size: 40px;
+}
+.projectCards .projects-cards {
+  width: 100%;
+  font-family: "Montserrat Alternates", sans-serif;
+  margin-top: 70px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.projectCards .projects-cards .card {
+  font-family: "Montserrat Alternates", sans-serif;
+  width: 850px;
+  height: 350px;
+  background-image: url("https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2FsbCUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&w=1000&q=80");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+.projectCards .projects-cards .card .up {
+  width: 100%;
+  height: 90%;
+  padding-bottom: -30px;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.projectCards .projects-cards .card .up p {
+  margin-top: 30px;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.projectCards .projects-cards .card .up a {
+  color: #fff;
+  font-family: "Montserrat Alternates", sans-serif;
+  text-decoration: none;
+  font-size: 30px;
+  transition: 0.5s;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+}
+.projectCards .projects-cards .card .up a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.5s ease-out;
+}
+.projectCards .projects-cards .card .up a:hover {
+  letter-spacing: 5px;
+}
+.projectCards .projects-cards .card .up a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.projectCards .projects-cards .card .up a::marker {
+  content: "";
+}
+.projectCards .projects-cards .card .down {
+  width: 100%;
+  height: 10%;
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.projectCards .projects-cards .card .down a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.projectCards .projects-cards .card .down a:hover {
+  text-decoration: underline;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+/*# sourceMappingURL=project.css.map */

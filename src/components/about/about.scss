@@ -1,0 +1,135 @@
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #FF7474;
+    border-radius: 10px 0 0 10px;
+    margin-right: 10px;
+}
+
+
+.aboutMePage{
+    padding: 0 45px;
+    padding-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: -100%;
+    // background-color: #3a3a3a;
+    .about-me{
+        width: 100%;
+        color: #fff;
+        height: 90vh;
+        font-family: 'Montserrat Alternates', sans-serif;
+        .up{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            height: 8vh;
+            h2{
+                color: #fff;
+                font-family: 'Montserrat Alternates', sans-serif;
+                font-size: 40px;
+            }
+        }
+        .down{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 82vh;
+            .left{
+                width: 50%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .blockImage{
+                    border-radius: 25px;
+                    background-image: url('https://camo.githubusercontent.com/61491d59e71fec5c794945fed916a4a682b6c0404fc31f30b08a0d919c558404/68747470733a2f2f696d616765732e73717561726573706163652d63646e2e636f6d2f636f6e74656e742f76312f3537363966633430316236333162616231616464623261622f313534313538303631313632342d5445363451474b524a4738535741495553374e532f6b6531375a77644742546f6464493870446d34386b506f73776c7a6a53564d4d2d53784f703743563539425a772d7a505067646e346a557756634a45315a7657515578776b6d794578676c4e714770304976544a5a616d574c49327a76595748384b332d735f3479737a63703272795449304871544f6161556f68724938504936465879386339505774426c7141566c555335697a7064634958445a71445976707252715a32395077306f2f636f64696e672d667265616b2e676966');
+                    background-size: cover;
+                    background-position: center;
+                    width: 400px;
+                    height: 400px;
+                }
+            }
+            .right{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 40px;
+                h4{
+                    font-size: 30px;
+                }
+                p{
+                    font-size: 25px;
+                }
+                .colorful{
+                    background: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%); /* Градієнтний фон */
+                    -webkit-background-clip: text; /* Вказуємо, що фоновий градієнт застосовується до тексту */
+                    -moz-background-clip: text;
+                    background-clip: text;
+                    color: transparent; /* Зробити текст прозорим */
+                }
+            }
+        }
+    }
+    .info{
+        margin-top: 100px;
+        width: 100%;
+        h2{
+            text-align: center;
+            color: #fff;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 50px;
+            margin-bottom: 30px;
+        }
+        p{
+            font-family: 'Montserrat Alternates', sans-serif;
+            color: #fff;
+            font-size: 30px;
+            margin: 20px 0;
+            letter-spacing: 5px;
+            .red{
+                color: #FF7474;
+            }
+            .blue{
+                color: #4d4dff;
+            }
+            .yellow{
+                color: #fffc41;
+            }
+        }
+    }
+    .skills{
+        width: 100%;
+        h2{
+            text-align: center;
+            color: #fff;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 40px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        p{
+            color: #fff;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-size: 25px;
+            letter-spacing: 3px;
+            margin: 20px 0;
+            .red{
+                color: #FF7474;
+            }
+        }
+    }
+}
