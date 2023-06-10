@@ -8,7 +8,6 @@ function Header({isActive, setIsActive}){
         setIsActive(!isActive);
     };
 
-    console.log(isActive)
     return(
         <header>
             <p>dev<span className="red">eloper</span></p>

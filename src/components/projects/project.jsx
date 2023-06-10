@@ -11,9 +11,6 @@ useEffect(() => {
         try {
             const response = await axios.get("https://api.github.com/users/AndriyStep12/repos");
             const data = response.data;
-            console.log(data)
-            // let a = 'sdsa'
-            // console.log(a.length)
             const filteredRepos = data.filter(repo => repo.description != null & repo.homepage != '' & repo.homepage != null & repo.name != 'Portfolio2.0');
             filteredRepos.sort(function(a, b) {
                 return a.stargazers_count - b.stargazers_count;
@@ -28,7 +25,6 @@ useEffect(() => {
     fetchData();
 }, []);
 
-console.log(repos)
 
     return (
         <div className="projectCards" style={!isActive ? {marginLeft: '0%', overflowY: 'auto', transition: '1s'}: {marginLeft: '-100%', overflowY: 'hidden', transition: '1s'}}>
