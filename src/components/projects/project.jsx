@@ -14,7 +14,7 @@ useEffect(() => {
             console.log(data)
             // let a = 'sdsa'
             // console.log(a.length)
-            const filteredRepos = data.filter(repo => repo.description != null & repo.homepage != '' & repo.homepage != null & repo.name != 'Portfolio');
+            const filteredRepos = data.filter(repo => repo.description != null & repo.homepage != '' & repo.homepage != null & repo.name != 'Portfolio2.0');
             filteredRepos.sort(function(a, b) {
                 return a.stargazers_count - b.stargazers_count;
             });
