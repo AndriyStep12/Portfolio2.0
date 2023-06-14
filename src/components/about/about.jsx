@@ -5,7 +5,7 @@ let soft_skills = ['Teamwork', 'GTD', 'Creativity', 'Responsibility', 'Leadershi
 
 function AboutMe ({isActive}){
     return (
-        <div className="aboutMePage" style={!isActive ? {marginLeft: '0%', overflowY: 'auto', transition: '1s'}: {marginLeft: '-100%', overflowY: 'hidden', transition: '1s'}}>
+        <div className="aboutMePage" style={!isActive ? {marginLeft: '0%', overflowY: 'hidden', transition: '1s', display: 'flex'}: {display: 'none', marginLeft: '-100%', overflow: 'hidden', transition: '1s'}}>
             <div className="about-me">
                 <div className="up">
                     <h2>About Me</h2>

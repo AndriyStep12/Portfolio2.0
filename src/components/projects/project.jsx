@@ -27,7 +27,7 @@ useEffect(() => {
 
 
     return (
-        <div className="projectCards" style={!isActive ? {marginLeft: '0%', overflowY: 'auto', transition: '1s'}: {marginLeft: '-100%', overflowY: 'hidden', transition: '1s'}}>
+        <div className="projectCards" style={!isActive ? {marginLeft: '0%', overflowY: 'hidden', transition: '1s', display: 'flex'}: {display: 'none', marginLeft: '-100%', overflow: 'hidden', transition: '1s'}}>
             <h2>My Projects</h2>
             <div className="projects-cards">
                 {repos.map(item => (

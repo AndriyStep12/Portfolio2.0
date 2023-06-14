@@ -18,7 +18,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App">
+      <div className="App" style={!isActive ? {overflowY: 'hidden'}: {overflow: 'hidden'}}>
         <Header
           isActive={isActive}
           setIsActive={setIsActive}
