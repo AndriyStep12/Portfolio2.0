@@ -1,7 +1,7 @@
 import './about.css'
 
 let tech_skills = ['React.js', 'HTML', 'CSS', 'JS', 'Bootstrap', 'jQuery', 'node.js', 'canvas.js', 'tippy.js', 'typed.js', 'email.js', 'MUI', 'SCSS', 'Redux', 'React Router']
-let soft_skills = ['Teemwork', 'GTD', 'Creativity', 'Responsibility', 'Leadership', 'Motivation', 'Patience']  
+let soft_skills = ['Teamwork', 'GTD', 'Creativity', 'Responsibility', 'Leadership', 'Motivation', 'Patience']  
 
 function AboutMe ({isActive}){
     return (
