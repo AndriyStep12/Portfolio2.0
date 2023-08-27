@@ -38,6 +38,14 @@ function App() {
           <Link to="/contacts" onClick={function(){
             setIsActive(!isActive)
           }}>Contacts</Link>
+          {/* <a href='/CV.pdf' className='cvBtn' download>CV download</a> */}
+          <a 
+            href={process.env.PUBLIC_URL + "CV.pdf"} 
+            download={"CV.pdf"}
+            className="cvBtn"
+          >
+            CV downloader
+          </a>
         </div>
         
         <Switch>
