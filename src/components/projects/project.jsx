@@ -5,25 +5,50 @@ import axios from 'axios';
 
 function ProjectsPage({isActive}) {
     const [repos, setRepos] = useState([]);
+    const GITHUB_TOKEN = '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';
 
-useEffect(() => {
-    async function fetchData() {
-        try {
-            const response = await axios.get("https://api.github.com/users/AndriyStep12/repos");
-            const data = response.data;
-            const filteredRepos = data.filter(repo => repo.description != null & repo.homepage != '' & repo.homepage != null & repo.name != 'Portfolio2.0');
-            filteredRepos.sort(function(a, b) {
-                return a.stargazers_count - b.stargazers_count;
+    async function fetchAllRepos() {
+        let page = 1;
+        let allRepos = [];
+        let hasNextPage = true;
+    
+        while (hasNextPage) {
+            const response = await axios.get("https://api.github.com/user/repos", {
+                headers: {
+                    Authorization: `token ${GITHUB_TOKEN}`
+                },
+                params: {
+                    visibility: 'all',
+                    per_page: 100,
+                    page: page
+                }
             });
-            filteredRepos.reverse()
-            setRepos(filteredRepos);
-        } catch (error) {
-            console.error(error);
-            setRepos([]);
+            allRepos = allRepos.concat(response.data);
+            hasNextPage = response.headers.link && response.headers.link.includes('rel="next"');
+            page++;
         }
+    
+        return allRepos;
     }
-    fetchData();
-}, []);
+    
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const data = await fetchAllRepos();
+                const filteredRepos = data.filter(repo => repo.description && repo.homepage && repo.name !== 'Portfolio2.0' && repo.name !== 'Portfolio' && repo.name !== 'meeting-platform-server');
+                filteredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+                setRepos(filteredRepos);
+            } catch (error) {
+                console.error(error);
+                setRepos([]);
+            }
+        }
+    
+        fetchData();
+    }, []);
+    
+
+    useEffect(()=>{console.log(repos)}, [repos])
 
 
     return (

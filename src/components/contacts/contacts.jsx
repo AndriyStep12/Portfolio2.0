@@ -2,7 +2,7 @@ import './contacts.css'
 import React from 'react'
 
 let arr = {
-    email: 'andystep.developer@gmail.com',
+    email: 'andystep2008@gmail.com',
     number: '+380680803866',
     country: 'Ukraine'
 }

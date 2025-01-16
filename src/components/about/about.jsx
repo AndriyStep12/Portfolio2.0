@@ -1,9 +1,26 @@
 import './about.css'
+import { useState, useEffect } from 'react';
 
-let tech_skills = ['React.js', 'HTML', 'CSS', 'JS', 'Bootstrap', 'jQuery', 'node.js', 'canvas.js', 'tippy.js', 'typed.js', 'email.js', 'MUI', 'SCSS', 'Redux', 'React Router']
+let tech_skills = ['Next.js', 'React.js', 'HTML', 'CSS', 'JS', 'Bootstrap', 'jQuery', 'node.js', 'canvas.js', 'tippy.js', 'typed.js', 'email.js', 'MUI', 'SCSS', 'Redux', 'React Router']
 let soft_skills = ['Teamwork', 'GTD', 'Creativity', 'Responsibility', 'Leadership', 'Motivation', 'Patience']  
 
 function AboutMe ({isActive}){
+
+    const [years, setYears] = useState(0);
+
+    function countYears() {
+        const dateNow = new Date();
+        const dateBirth = new Date(2008, 12, 13);
+        const timeDiff = dateNow.getTime() - dateBirth.getTime();
+        const age = Math.floor(timeDiff / (1000 * 3600 * 24 * 365));
+        setYears(age);
+    }
+
+    useEffect(()=>{
+        countYears();
+    }, [])
+
+
     return (
         <div className="aboutMePage" style={!isActive ? {marginLeft: '0%', overflowY: 'hidden', transition: '1s', display: 'flex'}: {display: 'none', marginLeft: '-100%', overflow: 'hidden', transition: '1s'}}>
             <div className="about-me">
@@ -16,7 +33,7 @@ function AboutMe ({isActive}){
                     </div>
                     <div className="right">
                         <h4>Hi there🔥✋. I'm <span className="colorful">Andriy</span></h4>
-                        <p>I'm a young <span className="colorful">programmer</span>. I <span className="colorful">study at Creator IT Academy</span> and I like it. During this time I learned something new and interesting and every new lesson it is adding to my knowledge. When I came there, everything seemed magical to me, from a regular page with text to a page with effects and a lot of functionality. I even didn't know if I could learn it all and write the code by myself. But as you can see, <span className="colorful">everything is possible, you just need to want it</span>. Before that I didn't understand computers at all (I can't even download a single program), and now I understand almost everything, at least in codes.</p>
+                        <p>I'm a young <span className="colorful">programmer</span>. I <span className="colorful">study at Creator IT Academy</span> and I like it. During this time I learned something new and interesting and every new lesson it is adding to my knowledge. When I came there, everything seemed magical to me, from a regular page with text to a page with effects and a lot of functionality. I even didn't know if I could learn it all and write the code by myself. But as you can see, <span className="colorful">everything is possible, you just need to want it and strive to achieve it</span>. Before that I didn't understand computers at all (I couldn't even download a single program), and now I understand almost everything, at least in lines of code.</p>
                     </div>
                 </div>
             </div>
@@ -24,7 +41,7 @@ function AboutMe ({isActive}){
                 <h2>Info</h2>
                 <p>const name = '<span className="red">Andriy</span>'</p>
                 <p>const surname = '<span className="red">Stepaniak</span>'</p>
-                <p>const years = '<span className="red">14</span>'</p>
+                <p>let years = '<span className="red">{years}</span>'</p>
                 <p>const nationality = '<span className="blue">Ukr</span><span className="yellow">aine</span>'</p>
             </div>
             <div className="skills">

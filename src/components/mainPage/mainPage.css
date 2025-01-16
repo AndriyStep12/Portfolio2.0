@@ -31,6 +31,11 @@
   font-size: 18px;
   font-family: "Montserrat Alternates", sans-serif;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #222;
+  text-decoration: none;
 }
 .mainPage .left .emailMainPage .email .red {
   color: #FF7474;
@@ -41,6 +46,13 @@
   background-image: url("../images/mainPage.png");
   background-size: cover;
   background-position: right;
+}
+
+.mainPage .left .skillsMainPage .goodAt {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 /*# sourceMappingURL=mainPage.css.map */

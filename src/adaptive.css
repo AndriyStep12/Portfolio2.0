@@ -46,8 +46,12 @@
   .aboutMePage .about-me .down .left,
 .aboutMePage .about-me .down .right {
     width: 100%;
-    height: 60vh;
-    margin: 20px 0;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  .aboutMePage .about-me .down .left .blockImage{
+    width: 250px;
+    height: 250px;
   }
   .aboutMePage .about-me .down .right {
     align-items: start;
@@ -67,9 +71,12 @@
   .aboutMePage .about-me {
     height: auto;
   }
-  .aboutMePage .about-me .down .right {
-    margin-top: 100px;
+
+  .aboutMePage .about-me .down .left .blockImage {
+    width: 200px;
+    height: 200px;
   }
+
   .aboutMePage .about-me .down .right p {
     font-size: 20px;
   }
