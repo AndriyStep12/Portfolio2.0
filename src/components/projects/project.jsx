@@ -6,7 +6,7 @@ import axios from 'axios';
 function ProjectsPage({ isActive }) {
     const [repos, setRepos] = useState([]);
 
-    const GITHUB_TOKEN = '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';
+    const GITHUB_TOKEN = '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';
 
     async function fetchAllRepos() {
         let page = 1;
