@@ -3,16 +3,16 @@ import Card from './Card/Card';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function ProjectsPage({isActive, GITHUB_TOKEN}) {
+function ProjectsPage({ isActive }) {
     const [repos, setRepos] = useState([]);
 
-
+    const GITHUB_TOKEN = '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';
 
     async function fetchAllRepos() {
         let page = 1;
         let allRepos = [];
         let hasNextPage = true;
-    
+
         while (hasNextPage) {
             const response = await axios.get("https://api.github.com/user/repos", {
                 headers: {
@@ -28,15 +28,21 @@ function ProjectsPage({isActive, GITHUB_TOKEN}) {
             hasNextPage = response.headers.link && response.headers.link.includes('rel="next"');
             page++;
         }
-    
+
         return allRepos;
     }
-    
+
     useEffect(() => {
         async function fetchData() {
             try {
                 const data = await fetchAllRepos();
-                const filteredRepos = data.filter(repo => repo.description && repo.homepage && repo.name !== 'Portfolio2.0' && repo.name !== 'Portfolio' && repo.name !== 'meeting-platform-server');
+                const filteredRepos = data.filter(repo => 
+                    repo.description &&
+                    repo.homepage &&
+                    repo.name !== 'Portfolio2.0' &&
+                    repo.name !== 'Portfolio' &&
+                    repo.name !== 'meeting-platform-server'
+                );
                 filteredRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
                 setRepos(filteredRepos);
             } catch (error) {
@@ -44,15 +50,12 @@ function ProjectsPage({isActive, GITHUB_TOKEN}) {
                 setRepos([]);
             }
         }
-    
+
         fetchData();
     }, []);
-    
-
-
 
     return (
-        <div className="projectCards" style={!isActive ? {marginLeft: '0%', overflowY: 'hidden', transition: '1s', display: 'flex'}: {display: 'none', marginLeft: '-100%', overflow: 'hidden', transition: '1s'}}>
+        <div className="projectCards" style={!isActive ? { marginLeft: '0%', overflowY: 'hidden', transition: '1s', display: 'flex' } : { display: 'none', marginLeft: '-100%', overflow: 'hidden', transition: '1s' }}>
             <h2>My Projects</h2>
             <div className="projects-cards">
                 {repos.map(item => (
