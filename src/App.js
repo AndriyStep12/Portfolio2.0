@@ -15,10 +15,8 @@ import './adaptive.css'
 function App() {
 
   const [isActive, setIsActive] = useState(false);
-  const githubToken = process.env.REACT_APP_TOKEN;
+  const githubToken = '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';
 
-  useEffect(()=>{console.log(githubToken)}, [githubToken])
-  useEffect(()=>{console.log(process.env)}, [process.env])
 
   return (
     <Router>
