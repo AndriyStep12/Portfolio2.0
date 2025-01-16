@@ -20,6 +20,11 @@ header {
   padding: 0 45px;
   z-index: 100;
 }
+
+header a{
+  text-decoration: none;
+}
+
 header p {
   font-size: 23px;
   font-family: "Montserrat", sans-serif;
