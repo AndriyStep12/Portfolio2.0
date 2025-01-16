@@ -3,7 +3,7 @@ import MainPage from './components/mainPage/mainPage';
 import ProjectsPage from './components/projects/project';
 import Contacts from './components/contacts/contacts';
 import AboutMe from './components/about/about';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Link
@@ -15,6 +15,10 @@ import './adaptive.css'
 function App() {
 
   const [isActive, setIsActive] = useState(false);
+  const githubToken = process.env.REACT_APP_TOKEN;
+
+  useEffect(()=>{console.log(githubToken)}, [githubToken])
+  useEffect(()=>{console.log(process.env)}, [process.env])
 
   return (
     <Router>
@@ -62,6 +66,7 @@ function App() {
           <Route path="/projects">
             <ProjectsPage
               isActive={isActive}
+              GITHUB_TOKEN={githubToken}
             />
           </Route>
           <Route path="/contacts">

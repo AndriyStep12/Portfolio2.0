@@ -3,9 +3,10 @@ import Card from './Card/Card';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function ProjectsPage({isActive}) {
+function ProjectsPage({isActive, GITHUB_TOKEN}) {
     const [repos, setRepos] = useState([]);
-    const GITHUB_TOKEN = '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';
+
+
 
     async function fetchAllRepos() {
         let page = 1;
@@ -48,7 +49,6 @@ function ProjectsPage({isActive}) {
     }, []);
     
 
-    useEffect(()=>{console.log(repos)}, [repos])
 
 
     return (
