@@ -15,6 +15,7 @@ import './adaptive.css'
 function App() {
 
   const [isActive, setIsActive] = useState(false);
+  const githubToken = process.env.REACT_APP_TOKEN;
 
 
   return (
@@ -63,6 +64,7 @@ function App() {
           <Route path="/projects">
             <ProjectsPage
               isActive={isActive}
+              GITHUB_TOKEN={githubToken}
             />
           </Route>
           <Route path="/contacts">
